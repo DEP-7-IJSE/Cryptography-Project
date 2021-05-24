@@ -5,6 +5,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 
+import static lk.ijse.crypto.CryptoAlgo.encrypt;
+
 public class EncryptionFormController {
 
     public TextField txtText;
@@ -25,21 +27,7 @@ public class EncryptionFormController {
             txtKey.requestFocus();
             return;
         }
-        text+="@"+key;
-        String reversedText="@@";
-        for (int i = text.length()-1; i >=0; i--) {
-            reversedText+=text.charAt(i);
-        }
-        reversedText+="@!!";
-        String cipheText="";
-        for (int i = 0; i < reversedText.length(); i++) {
-            int code=reversedText.charAt(i);
-            code+=10;
-            char newChar = (char) code;
-            cipheText+=newChar;
-        }
-        cipheText+=cipheText.hashCode();
-        txtCipherText.setText("^&5"+cipheText+"^%");
+        txtCipherText.setText(encrypt(text,key));
     }
 
     public void keyEnteredOnAction(ActionEvent actionEvent) {
