@@ -5,6 +5,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 
+import java.util.Random;
+
 public class DecryptionFormController {
     public TextField txtText;
     public TextField txtKey;
@@ -24,21 +26,10 @@ public class DecryptionFormController {
             txtKey.requestFocus();
             return;
         }
-        /*text+=key;
-        String reversedText="@@";
-        for (int i = text.length()-1; i >=0; i--) {
-            reversedText+=text.charAt(i);
+        if(cipher.length()<15){
+            genRandomNumbers();
+            return;
         }
-        reversedText+="@!!";
-        String cipheText="";
-        for (int i = 0; i < reversedText.length(); i++) {
-            int code=reversedText.charAt(i);
-            code+=10;
-            char newChar = (char) code;
-            cipheText+=newChar;
-        }
-        cipheText+=cipheText.hashCode();
-        txtCipherText.setText("^&5"+cipheText+"^%");*/
         String dec = cipher.substring(3,cipher.length()-12);
         String reverseText="";
         for (int i = 0; i < dec.length(); i++) {
@@ -49,21 +40,25 @@ public class DecryptionFormController {
         }
         String gotreversedText=reverseText.substring(2,reverseText.length()-3);
         String[] splitted=gotreversedText.split("@",2);
-        /*for (String a :
-                splitted) {
-            System.out.println(a);
-        }*/
         String reversedKey="";
         for (int i = splitted[0].length()-1; i >=0; i--) {
             reversedKey+=splitted[0].charAt(i);
         }
-        System.out.println(reversedKey);
         if(reversedKey.equals(txtKey.getText())){
             String text="";
             for (int i = splitted[1].length()-1; i >=0; i--) {
                 text+=splitted[1].charAt(i);
             }
             txtText.setText(text);
+        }else{
+            genRandomNumbers();
+            return;
         }
+    }
+    private void genRandomNumbers(){
+        Random random= new Random();
+        int randomInt = random.nextInt();
+        char randomChar = (char) randomInt;
+        txtText.setText(String.valueOf(randomChar));
     }
 }
