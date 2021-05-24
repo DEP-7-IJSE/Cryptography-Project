@@ -41,4 +41,8 @@ public class EncryptionFormController {
         cipheText+=cipheText.hashCode();
         txtCipherText.setText("^&5"+cipheText+"^%");
     }
+
+    public void keyEnteredOnAction(ActionEvent actionEvent) {
+        encryptOnAction(null);
+    }
 }

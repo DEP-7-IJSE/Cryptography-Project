@@ -18,7 +18,7 @@ public class DecryptionFormController {
 
         if(cipher.trim().isEmpty()){
             new Alert(Alert.AlertType.ERROR,"Please enter valid cipher", ButtonType.OK).show();
-            txtText.requestFocus();
+            txtCipher.requestFocus();
             return;
         }
         if(key.trim().isEmpty()){
@@ -39,7 +39,7 @@ public class DecryptionFormController {
             reverseText+=originalChar;
         }
         String gotreversedText=reverseText.substring(2,reverseText.length()-3);
-        String[] splitted=gotreversedText.split("@",2);
+        String[] splitted=gotreversedText.split("@",3);
         String reversedKey="";
         for (int i = splitted[0].length()-1; i >=0; i--) {
             reversedKey+=splitted[0].charAt(i);
@@ -60,5 +60,9 @@ public class DecryptionFormController {
         int randomInt = random.nextInt();
         char randomChar = (char) randomInt;
         txtText.setText(String.valueOf(randomChar));
+    }
+
+    public void keyEnteredOnAction(ActionEvent actionEvent) {
+        decryptOnAction(null);
     }
 }

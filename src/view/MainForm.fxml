@@ -12,12 +12,12 @@
             <Font name="System Bold" size="40.0" />
          </font>
       </Label>
-      <Button layoutX="57.0" layoutY="142.0" mnemonicParsing="false" onAction="#encryptOnAction" prefHeight="107.0" prefWidth="179.0" text="Encrypt" AnchorPane.bottomAnchor="86.0" AnchorPane.leftAnchor="57.0" AnchorPane.topAnchor="142.0">
+      <Button fx:id="btnEncrypt" layoutX="57.0" layoutY="142.0" mnemonicParsing="false" onAction="#encryptOnAction" prefHeight="107.0" prefWidth="179.0" text="Encrypt" AnchorPane.bottomAnchor="86.0" AnchorPane.leftAnchor="57.0" AnchorPane.topAnchor="142.0">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button layoutX="356.0" layoutY="142.0" mnemonicParsing="false" onAction="#decryptOnAction" prefHeight="107.0" prefWidth="179.0" text="Decrypt" AnchorPane.bottomAnchor="86.0" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="142.0">
+      <Button fx:id="btnDecrypt" layoutX="356.0" layoutY="142.0" mnemonicParsing="false" onAction="#decryptOnAction" prefHeight="107.0" prefWidth="179.0" text="Decrypt" AnchorPane.bottomAnchor="86.0" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="142.0">
          <font>
             <Font size="20.0" />
          </font>
