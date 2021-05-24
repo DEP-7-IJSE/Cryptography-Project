@@ -39,11 +39,6 @@ public class EncryptionFormController {
             cipheText+=newChar;
         }
         cipheText+=cipheText.hashCode();
-        String reversedKey="";
-        for (int i = key.length()-2; i >0; i--) {
-            reversedKey+=key.charAt(i);
-        }
-        System.out.println(reversedKey);
         txtCipherText.setText("^&5"+cipheText+"^%");
     }
 }

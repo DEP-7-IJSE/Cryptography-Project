@@ -47,6 +47,23 @@ public class DecryptionFormController {
             char originalChar = (char) code;
             reverseText+=originalChar;
         }
-        System.out.println(reverseText.substring(2,reverseText.length()-3));
+        String gotreversedText=reverseText.substring(2,reverseText.length()-3);
+        String[] splitted=gotreversedText.split("@",2);
+        /*for (String a :
+                splitted) {
+            System.out.println(a);
+        }*/
+        String reversedKey="";
+        for (int i = splitted[0].length()-1; i >=0; i--) {
+            reversedKey+=splitted[0].charAt(i);
+        }
+        System.out.println(reversedKey);
+        if(reversedKey.equals(txtKey.getText())){
+            String text="";
+            for (int i = splitted[1].length()-1; i >=0; i--) {
+                text+=splitted[1].charAt(i);
+            }
+            txtText.setText(text);
+        }
     }
 }
