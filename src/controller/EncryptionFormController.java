@@ -26,11 +26,19 @@ public class EncryptionFormController {
             return;
         }
         text+=key;
-        String reversedText="";
+        String reversedText="@@";
         for (int i = text.length()-1; i >=0; i--) {
             reversedText+=text.charAt(i);
         }
-
-
+        reversedText+="@!!";
+        String cipheText="";
+        for (int i = 0; i < reversedText.length(); i++) {
+            int code=reversedText.charAt(i);
+            code+=10;
+            char newChar = (char) code;
+            cipheText+=newChar;
+        }
+        cipheText+=cipheText.hashCode();
+        txtCipherText.setText("^&5"+cipheText+"^%");
     }
 }
