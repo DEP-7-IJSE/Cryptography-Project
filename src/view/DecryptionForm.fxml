@@ -16,7 +16,7 @@
       <TextField fx:id="txtCipher" layoutX="33.0" layoutY="84.0" prefHeight="35.0" prefWidth="534.0" promptText=" Cipher Text" />
       <TextField fx:id="txtKey" layoutX="33.0" layoutY="152.0" prefHeight="35.0" prefWidth="534.0" promptText="Key" />
       <TextField fx:id="txtText" alignment="CENTER" editable="false" layoutX="33.0" layoutY="298.0" prefHeight="35.0" prefWidth="534.0" promptText="Your text will be displayed here" />
-      <Button layoutX="459.0" layoutY="207.0" mnemonicParsing="false" onAction="#decriptOnAction" text="Decrypt">
+      <Button layoutX="459.0" layoutY="207.0" mnemonicParsing="false" onAction="#decryptOnAction" text="Decrypt">
          <font>
             <Font size="20.0" />
          </font>

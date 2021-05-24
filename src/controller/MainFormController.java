@@ -13,12 +13,12 @@ import java.io.IOException;
 public class MainFormController {
     public AnchorPane root;
 
-    public void encriptOnAction(ActionEvent actionEvent) throws IOException {
-        loadForm("/view/EncryptionForm.fxml","Encription Window");
+    public void encryptOnAction(ActionEvent actionEvent) throws IOException {
+        loadForm("/view/EncryptionForm.fxml","Encryption Window");
     }
 
-    public void decriptOnAction(ActionEvent actionEvent) throws IOException {
-        loadForm("/view/DecryptionForm.fxml","Decription Window");
+    public void decryptOnAction(ActionEvent actionEvent) throws IOException {
+        loadForm("/view/DecryptionForm.fxml","Decryption Window");
     }
 
     private void loadForm(String loadFormURL,String windowName) throws IOException {

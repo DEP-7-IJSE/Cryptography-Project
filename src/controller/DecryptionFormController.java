@@ -8,7 +8,7 @@ public class DecryptionFormController {
     public TextField txtKey;
     public TextField txtCipher;
 
-    public void decriptOnAction(ActionEvent actionEvent) {
+    public void decryptOnAction(ActionEvent actionEvent) {
 
     }
 }
